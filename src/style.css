@@ -1,6 +1,7 @@
 body {
   background-color: beige;
-  font-family: ;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
 }
 
 .main-box {
@@ -19,19 +20,27 @@ body {
   background-color: rgb(220, 220, 220);
   border: none;
   border-radius: 5px;
-  max-width: 90%;
-  width: 80%;
+  width: 90%;
   padding: 8px 15px;
+  margin-left: auto;
+  display: inline;
+  font-family: "Montserrat", sans-serif;
 }
 
 .search-button {
   background-color: rgb(220, 220, 220);
   border: none;
   border-radius: 5px;
-  padding: 8px 15px;
-  width: 15%;
+  padding: 8px;
+  width: 9%;
+  margin-right: auto;
+  display: inline;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
 }
 
-h1 {
+.main-title {
   text-align: center;
+  font-weight: 200;
 }
