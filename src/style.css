@@ -44,3 +44,30 @@ body {
   text-align: center;
   font-weight: 200;
 }
+
+.current-details {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+.current-information {
+  text-align: left;
+  line-height: 20px;
+  margin-right: 50px;
+  font-size: 12px;
+  padding: 10px 0px 10px 0px;
+}
+.current-temperature-container {
+  display: flex;
+  margin-left: 50px;
+}
+
+.current-temperature-value {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.current-temperature-unit {
+  padding-top: 10px;
+}
