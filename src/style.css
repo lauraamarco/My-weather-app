@@ -1,5 +1,5 @@
 body {
-  background-color: beige;
+  background-color: #fbf2d5;
   font-family: "Montserrat", sans-serif;
   text-align: center;
 }
@@ -17,7 +17,7 @@ body {
 }
 
 .search-box {
-  background-color: rgb(220, 220, 220);
+  background-color: rgba(237, 231, 231, 0.77);
   border: none;
   border-radius: 5px;
   width: 90%;
@@ -28,7 +28,7 @@ body {
 }
 
 .search-button {
-  background-color: rgb(220, 220, 220);
+  background-color: #fdc57b;
   border: none;
   border-radius: 5px;
   padding: 8px;
@@ -44,7 +44,13 @@ body {
   text-align: center;
   font-weight: 200;
 }
+img {
+  width: 80%;
+}
 
+.current-description {
+  font-size: 20px;
+}
 .current-details {
   display: flex;
   justify-content: center;
@@ -55,7 +61,7 @@ body {
   text-align: left;
   line-height: 20px;
   margin-right: 50px;
-  font-size: 12px;
+  font-size: 15px;
   padding: 10px 0px 10px 0px;
 }
 .current-temperature-container {
@@ -70,4 +76,25 @@ body {
 
 .current-temperature-unit {
   padding-top: 10px;
+}
+
+.current-day {
+  padding-top: 20px;
+  font-weight: 200;
+}
+
+footer {
+  margin: 40px 0px 0px 0px;
+  font-size: 12px;
+  font-weight: 200;
+  color: orange;
+}
+
+a {
+  color: orangered;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
