@@ -11,11 +11,11 @@
   </head>
   <body>
    <div class="main-box">
-    <form class="form">
-<input class="search-box" type="search" placeholder="Enter a city" required />
+    <form class="form" id="search-form">
+<input class="search-box" type="search" placeholder="Enter a city" required id="search-form-input" />
 <input class = "search-button" type="submit" value="Go" />
 </form>
-    <h1 class="main-title">Today in <strong> Barcelona </strong></h1>
+    <h1 class="main-title">Today in <strong id="city"> Barcelona </strong></h1>
     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/118/619/original/Sunny.png?1710177830"/>
     <div class="current-description">SUNNY</div>
     <div class="current-details"> 
@@ -30,7 +30,9 @@
     </div>
     </div>
     <div class="current-day"> Sunday 12:30</div>
-  </body>
+
+    
+  
   <footer>
     This project was coded by
     <a href="https://github.com/lauraamarco" target="_blank">Laura Marco</a>, is
@@ -41,5 +43,6 @@
     <a href="https://weatherabylau.netlify.app/" target="_blank">Netlify</a>.
   </footer>
 </div>
-
+<script src='src/index.js'></script>
+</body>
 </html>
