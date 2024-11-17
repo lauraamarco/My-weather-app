@@ -14,12 +14,15 @@ function refreshWeather(response) {
   let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
 
+  let iconElement = document.querySelector("#icon");
+
   temperatureElement.innerHTML = Math.round(temperature);
   cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = description.toUpperCase();
   humidityElement.innerHTML = response.data.temperature.humidity;
   windSpeedElement.innerHTML = response.data.wind.speed;
   timeElement.innerHTML = formatDate(date);
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" />`;
 }
 
 function formatDate(date) {
