@@ -5,10 +5,11 @@ function updateWeather(response) {
   let cityElement = document.querySelector("#city");
 
   let descriptionElement = document.querySelector("#description");
+  let description = response.data.condition.description;
 
   temperatureElement.innerHTML = Math.round(temperature);
   cityElement.innerHTML = response.data.city;
-  descriptionElement.innerHTML = response.data.condition.description;
+  descriptionElement.innerHTML = description.toUpperCase();
 }
 
 function searchCity(city) {
