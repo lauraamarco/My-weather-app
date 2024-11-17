@@ -9,10 +9,13 @@ function updateWeather(response) {
 
   let humidityElement = document.querySelector("#humidity");
 
+  let windSpeedElement = document.querySelector("#wind-speed");
+
   temperatureElement.innerHTML = Math.round(temperature);
   cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = description.toUpperCase();
   humidityElement.innerHTML = response.data.temperature.humidity;
+  windSpeedElement.innerHTML = response.data.wind.speed;
 
   console.log(response.data);
 }
