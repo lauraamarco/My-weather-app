@@ -7,9 +7,14 @@ function updateWeather(response) {
   let descriptionElement = document.querySelector("#description");
   let description = response.data.condition.description;
 
+  let humidityElement = document.querySelector("#humidity");
+
   temperatureElement.innerHTML = Math.round(temperature);
   cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = description.toUpperCase();
+  humidityElement.innerHTML = response.data.temperature.humidity;
+
+  console.log(response.data);
 }
 
 function searchCity(city) {
