@@ -82,7 +82,7 @@ function customIcon(iconDescription) {
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/647/original/rain-night.jpg?1731871434";
   }
 
-  return `<img src=${iconURL} alt="Weather icon" />`;
+  return `<img src=${iconURL} alt="Weather icon" class="current-icon"/>`;
 }
 
 function formatDate(date) {
