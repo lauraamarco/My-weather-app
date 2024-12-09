@@ -31,8 +31,7 @@ function refreshWeather(response) {
 
 function customIcon(iconDescription) {
   //I've added my custom icons. But not sure about this or if there was an easier way to setting this up:
-  let iconURL =
-    "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/118/619/original/Sunny.png?1710177830";
+  let iconURL = "";
 
   if (iconDescription === "clear-sky-day") {
     iconURL =
@@ -141,8 +140,8 @@ function displayForecast(response) {
       forecastHtml + //I'm adding the empty variable plus this information for each of the days
       ` <div class="weather-forecast-day">
         <div class="weather-forecast-date">Tue</div>
-        <div class="weather-forecast-icon" id="icon-forecast">
-          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/118/619/original/Sunny.png?1710177830" class="weather-forecast-icon">
+        <div class="weather-forecast-icon">
+        <img src= "${day.condition.icon_url}" class=weather-forecast-icon />
         </div>
         <div class="weather-forecast-temperatures"> 
           <div class="weather-forecast-temperature">
@@ -164,4 +163,3 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Barcelona");
-getForecast("Barcelona");
