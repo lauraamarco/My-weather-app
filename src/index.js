@@ -133,14 +133,14 @@ function displayForecast(response) {
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = ""; //creating a variable that is empty. But I want to inject the html inside this variable later.
 
-  response.data.daily.forEach(function (day) {
+  response.data.daily.forEach(function (day, index) {
     //I'm going to look into each of the elements of the days array and for each of them:
-
-    forecastHtml = //creation of a string
-      forecastHtml + //I'm adding the empty variable plus this information for each of the days
-      ` <div class="weather-forecast-day">
+    if (index < 5) {
+      forecastHtml = //creation of a string
+        forecastHtml + //I'm adding the empty variable plus this information for each of the days
+        ` <div class="weather-forecast-day">
         <div class="weather-forecast-date">Tue</div>
-        <div class="weather-forecast-icon">
+        <div>
         <img src= "${day.condition.icon_url}" class=weather-forecast-icon />
         </div>
         <div class="weather-forecast-temperatures"> 
@@ -153,6 +153,7 @@ function displayForecast(response) {
          </div>
       </div>
       `;
+    }
   });
 
   let forecastElement = document.querySelector("#forecast");
