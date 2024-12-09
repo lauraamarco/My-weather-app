@@ -119,7 +119,37 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+function dispalyForecast() {
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = ""; //creating a variable that is empty. But I want to inject the html inside this variable later.
+
+  days.forEach(function (day) {
+    //I'm going to look into each of the elements of the days array and for each of them:
+
+    forecastHtml = //creation of a string
+      forecastHtml + //I'm adding the empty variable plus this information for each of the days
+      ` <div class="weather-forecast-day">
+        <div class="weather-forecast-date">${day}</div>
+        <div class="weather-forecast-icon">
+          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/118/619/original/Sunny.png?1710177830" class="weather-forecast-icon">
+        </div>
+        <div class="weather-forecast-temperatures"> 
+          <div class="weather-forecast-temperature">
+            <strong>20°</strong> 
+            </div>
+            <div class="weather-forecast-temperature"> 10°</div>
+         </div>
+      </div>
+      `;
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Barcelona");
+
+dispalyForecast();
