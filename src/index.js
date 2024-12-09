@@ -25,6 +25,8 @@ function refreshWeather(response) {
   windSpeedElement.innerHTML = response.data.wind.speed;
   timeElement.innerHTML = formatDate(date);
   iconElement.innerHTML = customIcon(iconDescription);
+
+  getForecast(response.data.city);
 }
 
 function customIcon(iconDescription) {
@@ -119,7 +121,16 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
-function dispalyForecast() {
+function getForecast(city) {
+  let apiKey = "db2eaa70afcd7t05847a43o4d14ba820";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  console.log(apiURL);
+  axios(apiURL).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
+
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = ""; //creating a variable that is empty. But I want to inject the html inside this variable later.
 
@@ -151,5 +162,4 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Barcelona");
-
-dispalyForecast();
+getForecast("Barcelona");
