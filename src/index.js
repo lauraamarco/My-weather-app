@@ -120,6 +120,12 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[date.getDay()];
+}
+
 function getForecast(city) {
   let apiKey = "db2eaa70afcd7t05847a43o4d14ba820";
   let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
@@ -139,7 +145,7 @@ function displayForecast(response) {
       forecastHtml = //creation of a string
         forecastHtml + //I'm adding the empty variable plus this information for each of the days
         ` <div class="weather-forecast-day">
-        <div class="weather-forecast-date">Tue</div>
+        <div class="weather-forecast-date">${formatDay(day.time)}</div>
         <div>
         <img src= "${day.condition.icon_url}" class=weather-forecast-icon />
         </div>
