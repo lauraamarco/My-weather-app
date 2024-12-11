@@ -16,21 +16,21 @@ function refreshWeather(response) {
 
   let iconElement = document.querySelector("#icon");
 
-  let iconDescription = response.data.condition.icon;
-
   temperatureElement.innerHTML = Math.round(temperature);
   cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = description.toUpperCase();
   humidityElement.innerHTML = response.data.temperature.humidity;
   windSpeedElement.innerHTML = response.data.wind.speed;
   timeElement.innerHTML = formatDate(date);
-  iconElement.innerHTML = customIcon(iconDescription);
+  iconElement.innerHTML = `<img  ${customIcon(
+    response.data.condition.icon
+  )} alt="Weather icon" class="current-icon"/>`;
 
   getForecast(response.data.city);
 }
 
 function customIcon(iconDescription) {
-  //I've added my custom icons. But not sure about this or if there was an easier way to setting this up:
+  //I've added my custom icons. But not sure about this or if there was an easier way to setting this up like with an array with the URLs:
   let iconURL = "";
 
   if (iconDescription === "clear-sky-day") {
@@ -83,7 +83,7 @@ function customIcon(iconDescription) {
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/647/original/rain-night.jpg?1731871434";
   }
 
-  return `<img src=${iconURL} alt="Weather icon" class="current-icon"/>`;
+  return `src=${iconURL}`;
 }
 
 function formatDate(date) {
@@ -137,17 +137,16 @@ function displayForecast(response) {
   console.log(response.data);
 
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
-  let forecastHtml = ""; //creating a variable that is empty. But I want to inject the html inside this variable later.
+  let forecastHtml = "";
 
   response.data.daily.forEach(function (day, index) {
-    //I'm going to look into each of the elements of the days array and for each of them:
     if (index < 5) {
-      forecastHtml = //creation of a string
-        forecastHtml + //I'm adding the empty variable plus this information for each of the days
+      forecastHtml =
+        forecastHtml +
         ` <div class="weather-forecast-day">
         <div class="weather-forecast-date">${formatDay(day.time)}</div>
         <div>
-        <img src= "${day.condition.icon_url}" class=weather-forecast-icon />
+        <img ${customIcon(day.condition.icon)} class=weather-forecast-icon />
         </div>
         <div class="weather-forecast-temperatures"> 
           <div class="weather-forecast-temperature">
