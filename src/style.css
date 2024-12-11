@@ -12,6 +12,11 @@ body {
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   border-radius: 16px;
 }
+.form {
+  display: inline-block;
+  white-space: nowrap;
+  width: 95%;
+}
 
 .search-box {
   background-color: rgba(237, 231, 231, 0.77);
@@ -29,7 +34,7 @@ body {
   border: none;
   border-radius: 5px;
   padding: 8px;
-  width: 9%;
+  width: 15%;
   margin-right: auto;
   display: inline;
   text-align: center;
@@ -40,6 +45,7 @@ body {
 .main-title {
   text-align: center;
   font-weight: 200;
+  margin-top: 35px;
 }
 .current-icon {
   width: 80%;
